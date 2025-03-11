@@ -1,5 +1,15 @@
+
 // Create the builder
+using Backend.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+// Add PostgreSQL Database
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
+);
 
 // Add CORS to can have access from the frontend
 builder.Services.AddCors(options =>

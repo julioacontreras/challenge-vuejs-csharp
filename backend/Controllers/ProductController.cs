@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
-[Route("api/tshirt")]
-public class TshirtController : ControllerBase
+[Route("api/product")]
+public class ProductController : ControllerBase
 {
     [HttpGet]
     public IActionResult GetMessage()
