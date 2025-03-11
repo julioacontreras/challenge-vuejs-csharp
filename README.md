@@ -1,41 +1,46 @@
 # Challenge
 
 The purpose of this test is to understand the capabilities both on backend server
-programming using 
+programming using:
 
-C#, ASP.NET Web API and SQL server, 
+* C#
+* ASP.NET 
+* Web API 
+* SQL server, 
 
-and on the frontend, with client
-side technologies - 
-  VUE.JS+typescript(preferred) or simple html+JS (in this case you can
-use a skeleton asp.net page).
+Frontend, with client side technologies: 
 
-For this test, you’ll be required to develop a simple photo upload application for a tailored
-t-shirt application. In this example, we will consider that a t-shirt can be customized on 2
-variations:
+* VUE.JS
+* typescript(preferred) 
+* Tailwindcss 
 
-- Color - the color of the t-shirt.
+For this test, you’ll be required to develop:
 
-- Fabric - the type of cloth used.
+* simple photo upload application for a tailored t-shirt application. 
+In this example, we will consider that a t-shirt can be customized on 2 variations:
+
+* Color - the color of the t-shirt.
+
+* Fabric - the type of cloth used.
 A variable number of Images can be uploaded for each combination of Color+Fabric.
 
 ## The application will contain:
 
-- A page where you will list the existing items (the application doesn’t need to create
+* A page where you will list the existing items (the application doesn’t need to create
 new items, just use the ones on the database), how many colors and fabrics are
 associated with that item, and how many images exist in total. There should be an
 edit photo button that will open the upload page.
 
-The upload page - where you can upload the images for a specific item.
+* The upload page - where you can upload the images for a specific item.
 Your page will list the item id and name, and a grid that will be filled with the
 configured database product configuration of colors and fabric.
 For each combination, you should be able to add any number of images, and should
 display an “add” button that will open a popup to add the new image.
 
-Any images that have been uploaded, will have an overlay button that will remove the
+* Any images that have been uploaded, will have an overlay button that will remove the
 image.
 
-Your solution should take into consideration best practices, using Entity Framework to
+* Your solution should take into consideration best practices, using Entity Framework to
 manipulate database data, and also look into the best performant solution.
 
 ## Delivery:

@@ -1,0 +1,49 @@
+# Visual Studio Code
+.vscode/
+
+# Build and output directories
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+
+# Dependency packages
+packages/
+
+# Temporary files
+*.tmp
+*.bak
+
+# ASP.NET specific
+appsettings.*.json
+secrets.json
+
+# Publish output
+publish/
+wwwroot/
+
+# Rider specific
+.idea/
+*.iml
+
+# macOS specific
+.DS_Store
+
+# Windows specific
+Thumbs.db
+Desktop.ini
+
+# JetBrains Rider
+.idea/
+*.sln.iml
