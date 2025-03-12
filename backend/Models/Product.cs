@@ -1,12 +1,18 @@
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
 namespace Backend.Models
 {
   public class Product
   {
-    public int Id { get; set; }
+    public int? Id { get; set; }
     public required string Name { get; set; }
     public decimal Price { get; set; }
-    public decimal Colors { get; set; }
-    public Fabric[]? Fabrics { get; set; }
-    public Image[]? Images { get; set; }
+
+    [Column(TypeName = "jsonb")]
+
+    public Dictionary<string, object> Settings { get; set; } = new();
+
   }
 }

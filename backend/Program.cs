@@ -2,14 +2,20 @@
 // Create the builder
 using Backend.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
+using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 // Add PostgreSQL Database
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
-);
+{
+    var dataSourceBuilder = new NpgsqlDataSourceBuilder(builder.Configuration.GetConnectionString("DefaultConnection"));
+    dataSourceBuilder.EnableDynamicJson(); // Enable JSON serialization
+    var dataSource = dataSourceBuilder.Build();
+    options.UseNpgsql(dataSource);
+});
 
 // Add CORS to can have access from the frontend
 builder.Services.AddCors(options =>
