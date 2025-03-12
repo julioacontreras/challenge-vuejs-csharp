@@ -89,6 +89,15 @@ dotnet ef database update
 dotnet clean
 dotnet build
 dotnet run
+
+# start front
+cd frontend
+
+# install dependencies
+npm i
+
+# run application in dev mode
+npm run dev
 ```
 
 ## Database 
