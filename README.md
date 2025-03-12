@@ -24,7 +24,8 @@ In this example, we will consider that a t-shirt can be customized on 2 variatio
 * Fabric - the type of cloth used.
 A variable number of Images can be uploaded for each combination of Color+Fabric.
 
-## The application will contain:
+
+## The application will contain
 
 * A page where you will list the existing items (the application doesn’t need to create
 new items, just use the ones on the database), how many colors and fabrics are
@@ -43,7 +44,8 @@ image.
 * Your solution should take into consideration best practices, using Entity Framework to
 manipulate database data, and also look into the best performant solution.
 
-## Delivery:
+
+## Delivery
 
 You should send us a git repo to clone containing a working .NET solution, with all the
 assets necessary to run the project.
@@ -51,6 +53,7 @@ Please provide the database creation scripts, alongside with any initialization 
 necessary. You can use a code-first or database-first approach.
 
 You will be evaluated in:
+
 
 ### Criteria Weight
 
@@ -69,3 +72,25 @@ You will be evaluated in:
 * .Net Project Structure 6
 
 * Git knowledge 7
+
+
+### Get started
+
+```bash
+cd backend
+
+# start database
+docker-compose up --build 
+
+# Create database
+dotnet ef database update
+
+# start server
+dotnet clean
+dotnet build
+dotnet run
+```
+
+## Database 
+
+If create more models execute `dotnet ef migrations add InitialCreate` to update the database models.
