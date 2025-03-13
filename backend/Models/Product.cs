@@ -1,6 +1,4 @@
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace Backend.Models
 {
@@ -10,9 +8,10 @@ namespace Backend.Models
     public required string Name { get; set; }
     public decimal Price { get; set; }
 
-    [Column(TypeName = "jsonb")]
+    [Column(TypeName = "text")]
 
-    public Dictionary<string, object> Settings { get; set; } = new();
+    public required string Settings { get; set; }
 
   }
+
 }

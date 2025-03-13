@@ -1,3 +1,4 @@
+
 GET http://localhost:5127/api/product
 
 ###
@@ -11,29 +12,7 @@ content-type: application/json
 {
     "name": "Skeleton t-shirt",
     "price": "71.33",
-    "settings": {
-        "fabrics": [
-            {
-                "name": "silk",
-                "colors": [
-                    {
-                        "name": "white",
-                        "images": [
-                            "base64-1",
-                            "base64-2"
-                        ]
-                    },
-                    {
-                        "name": "black",
-                        "images": [
-                            "base64-1",
-                            "base64-2"
-                        ]
-                    }            
-                ]
-            }
-        ]
-   }
+    "settings": "{\"fabrics\":[{\"name\":\"silk\",\"colors\":[{\"name\":\"white\",\"images\":[\"base64-1\",\"base64-2\"]},{\"name\":\"black\",\"images\":[\"base64-1\",\"base64-2\"]}]}]}"
 }
 
 ###

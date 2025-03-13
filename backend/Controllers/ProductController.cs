@@ -2,9 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 using Backend.Data;
 using Backend.Repositories;
 using Backend.Models;
-
 [ApiController]
 [Route("api/product")]
+
 public class ProductController : ControllerBase
 {
     private readonly ProductRepository _productRepository;
@@ -22,7 +22,13 @@ public class ProductController : ControllerBase
         {
             return NotFound();
         }
-        return Ok(products);
+        List<ProductViewModel> list = new List<ProductViewModel>();
+        foreach (Product product in products)
+        {
+            ProductViewModel pvm = new ProductViewModel(product);
+            list.Add(pvm);
+        }
+        return Ok(list);
     }
 
     [HttpGet("{id}")]
