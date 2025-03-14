@@ -12,7 +12,7 @@ content-type: application/json
 {
     "name": "Gorillaz t-shirt",
     "price": "71.33",
-    "settings": "{\"fabrics\":[{\"id\":\"fsd1\",\"name\":\"silk\",\"colors\":[{\"id\":\"1sdfd\",\"name\":\"white\",\"images\":[]},{\"id\":\"2sdf\",\"name\":\"yellow\",\"images\":[]},{\"id\":\"3sdfs\",\"name\":\"green\",\"images\":[]}]}, {\"id\":\"fsssd1\",\"name\":\"linen\",\"colors\":[{\"id\":\"1sdfsasd\",\"name\":\"white\",\"images\":[]},{\"id\":\"2assdf\",\"name\":\"yellow\",\"images\":[]},{\"id\":\"3sdasafs\",\"name\":\"green\",\"images\":[]}]}]}"
+    "settings": "{\"fabrics\":[{\"name\":\"silk\",\"colors\":[{\"name\":\"white\",\"images\":[]},{\"name\":\"yellow\",\"images\":[]},{\"name\":\"green\",\"images\":[]}]}, {\"name\":\"linen\",\"colors\":[{\"name\":\"white\",\"images\":[]},{\"name\":\"yellow\",\"images\":[]},{\"name\":\"green\",\"images\":[]}]}]}"
 }
 
 ###

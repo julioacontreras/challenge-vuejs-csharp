@@ -1,22 +1,5 @@
 
-INSERT INTO "Products" ("Name", "Price") VALUES
-('Product 1', 10.99),
-('Product 2', 25.50),
-('Product 3', 5.75),
-('Product 4', 12.99),
-('Product 5', 30.00),
-('Product 6', 18.25),
-('Product 7', 9.50),
-('Product 8', 21.99),
-('Product 9', 8.65),
-('Product 10', 15.40),
-('Product 11', 22.10),
-('Product 12', 6.30),
-('Product 13', 19.99),
-('Product 14', 11.75),
-('Product 15', 13.50),
-('Product 16', 17.80),
-('Product 17', 29.99),
-('Product 18', 7.99),
-('Product 19', 23.40),
-('Product 20', 14.85);
+INSERT INTO "Products" ("Name", "Price", "Settings") VALUES
+('Gorillaz t-shirt', 10.99, '{"fabrics":[{"name":"silk","colors":[{"name":"white","images":[]},{"name":"yellow","images":[]},{"name":"green","images":[]}]}, {"name":"linen","colors":[{"name":"white","images":[]},{"name":"yellow","images":[]},{"name":"green","images":[]}]}]}'),
+('Abba t-shirt', 25.50, '{"fabrics":[{"name":"silk","colors":[{"name":"white","images":[]},{"name":"yellow","images":[]},{"name":"green","images":[]}]}, {"name":"linen","colors":[{"name":"white","images":[]},{"name":"yellow","images":[]},{"name":"green","images":[]}]}]}'),
+('DaftPunk t-shirt', 5.75, '{"fabrics":[{"name":"silk","colors":[{"name":"white","images":[]},{"name":"yellow","images":[]},{"name":"green","images":[]}]}, {"name":"linen","colors":[{"name":"white","images":[]},{"name":"yellow","images":[]},{"name":"green","images":[]}]}]}');
