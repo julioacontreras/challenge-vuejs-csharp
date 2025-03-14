@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 using Backend.Data;
 using Backend.Repositories;
 using Backend.Models;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
+
 [ApiController]
 [Route("api/product")]
 
@@ -53,15 +56,96 @@ public class ProductController : ControllerBase
         return Ok(response);
     }
 
-    [HttpPut("{id}")]
-    public IActionResult UpdateProduct(int id, Product product)
+    [HttpDelete("removeImage/{id}/{fabric}/{color}/{imageIdx}")]
+    public IActionResult RemoveImageProduct(int id, string fabric, string color, int imageIdx)
     {
-        Product? response = _productRepository.UpdateProduct(id, product);
-        if (response == null)
+        Product? product = _productRepository.GetProduct(id);
+        if (product == null)
         {
             return NotFound();
         }
-        return Ok(response);
+
+        JObject settings = JObject.Parse(product.Settings);
+        var fabrics = settings["fabrics"];
+        if (fabrics == null)
+        {
+            return NotFound();
+        }
+        foreach (var fabricItem in fabrics)
+        {
+            if (fabricItem["name"]?.ToString() != fabric)
+            {
+                continue;
+            }
+            var colors = fabricItem["colors"];
+            if (colors == null)
+            {
+                continue;
+            }
+            foreach (var colorItem in colors)
+            {
+                if (colorItem["name"]?.ToString() != color)
+                {
+                    continue;
+                }
+                var images = colorItem["images"] as JArray;
+                if (images != null)
+                {
+                    images.RemoveAt(imageIdx);
+                }
+            }
+        }
+        var json = JsonConvert.SerializeObject(settings);
+        product.Settings = json;
+        _productRepository.UpdateProduct(id, product);
+        return Ok(product);
+    }
+
+    [HttpPut("addImage/{id}/{fabric}/{color}")]
+    public IActionResult AddImageProduct(int id, string fabric, string color, Image image)
+    {
+        Product? product = _productRepository.GetProduct(id);
+        if (product == null)
+        {
+            return NotFound();
+        }
+
+        JObject settings = JObject.Parse(product.Settings);
+        var fabrics = settings["fabrics"];
+        if (fabrics == null)
+        {
+            return NotFound();
+        }
+        foreach (var fabricItem in fabrics)
+        {
+            if (fabricItem["name"]?.ToString() != fabric)
+            {
+                continue;
+            }
+            var colors = fabricItem["colors"];
+            if (colors == null)
+            {
+                continue;
+            }
+            foreach (var colorItem in colors)
+            {
+                if (colorItem["name"]?.ToString() != color)
+                {
+                    continue;
+                }
+                var images = colorItem["images"] as JArray;
+                if (images == null)
+                {
+                    images = new JArray();
+                    colorItem["images"] = images;
+                }
+                images.Add(image.source);
+            }
+        }
+        var json = JsonConvert.SerializeObject(settings);
+        product.Settings = json;
+        _productRepository.UpdateProduct(id, product);
+        return Ok(product);
     }
 
     [HttpDelete("{id}")]
