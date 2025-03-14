@@ -17,3 +17,7 @@
 .col_secondary {
   @apply text-gray-400;
 }
+
+.img {
+  @apply max-w-[100px];
+}

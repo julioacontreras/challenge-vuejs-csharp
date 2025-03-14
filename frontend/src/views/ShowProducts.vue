@@ -5,6 +5,6 @@ import TableProduct from '../components/TableProduct.vue';
 
 <template>
   <Layout>
-    <TableProduct></TableProduct>
+    <TableProduct />
   </Layout>
 </template>

@@ -3,12 +3,10 @@ import { ref, onMounted } from 'vue';
 import { type ProductStats } from '../types/ProductStats'
 const products = ref<ProductStats[]>([]);
 const loading = ref(true);
-
 onMounted(async () => {
   products.value = await fetch(`/api/product`).then((r) => r.json())
   loading.value = false
 })
-
 const columns = [
   { title: '#', width: '50px', class: 'col_secondary' },
   { title: 'Name', width: '200px', class: 'col_secondary' },
@@ -17,7 +15,6 @@ const columns = [
   { title: 'Nº images', width: '150px', class: 'col_secondary' },
   { title: 'Action', width: '150px', class: 'col_secondary flex justify-end pr-6' }
 ]
-
 </script>
 
 <template>
@@ -58,6 +55,5 @@ const columns = [
         </div>
       </div>
     </div>
-
   </section>
 </template>
