@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-const products = ref([]);
+import { type ProductStats } from '../types/ProductStats'
+const products = ref<ProductStats[]>([]);
 const loading = ref(true);
 
 onMounted(async () => {
@@ -35,19 +36,19 @@ const columns = [
         <div v-for="product in products">
           <div class="flex justify-between">
             <div class="col_secondary text-gray flex justify-start" :style="{ width: columns[0].width }"> {{ product.id
-            }}
+              }}
             </div>
             <div class="font-semibold" :style="{ width: columns[1].width }"> {{ product.name }} </div>
             <div class="col_secondary flex justify-start" :style="{ width: columns[2].width }"> {{ product.totalColors
-            }}
+              }}
             </div>
             <div class="col_secondary flex justify-start" :style="{ width: columns[3].width }"> {{ product.totalFabrics
-            }}
+              }}
             </div>
             <div class="col_secondary flex justify-start" :style="{ width: columns[4].width }"> {{ product.totalImages
-            }}
+              }}
             </div>
-            <div> <a :href="`/product/edit?id=${product.id}`" class="btn" :style="{ width: columns[5].width }">Edit
+            <div> <a :href="`/edit/${product.id}`" class="btn" :style="{ width: columns[5].width }">Edit
                 images</a>
             </div>
           </div>
