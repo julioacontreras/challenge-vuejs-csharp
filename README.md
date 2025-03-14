@@ -11,7 +11,7 @@ programming using:
 Frontend, with client side technologies: 
 
 * VUE.JS
-* typescript(preferred) 
+* typescript
 * Tailwindcss 
 
 For this test, you’ll be required to develop:
