@@ -2,7 +2,7 @@
 GET http://localhost:5127/api/product
 
 ###
-GET http://localhost:5127/api/product/3
+GET http://localhost:5127/api/product/1
 
 ###
 
@@ -10,7 +10,7 @@ POST http://localhost:5127/api/product
 content-type: application/json
 
 {
-    "name": "Skeleton t-shirt",
+    "name": "Test t-shirt",
     "price": "71.33",
     "settings": "{\"fabrics\":[{\"name\":\"silk\",\"colors\":[{\"name\":\"white\",\"images\":[\"base64-1\",\"base64-2\"]},{\"name\":\"black\",\"images\":[\"base64-1\",\"base64-2\"]}]}]}"
 }

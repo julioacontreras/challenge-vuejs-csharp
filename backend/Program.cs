@@ -2,17 +2,14 @@
 // Create the builder
 using Backend.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualBasic;
 using Npgsql;
 
 var builder = WebApplication.CreateBuilder(args);
-
 
 // Add PostgreSQL Database
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     var dataSourceBuilder = new NpgsqlDataSourceBuilder(builder.Configuration.GetConnectionString("DefaultConnection"));
-    dataSourceBuilder.EnableDynamicJson(); // Enable JSON serialization
     var dataSource = dataSourceBuilder.Build();
     options.UseNpgsql(dataSource);
 });
